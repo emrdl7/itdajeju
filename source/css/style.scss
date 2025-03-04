@@ -1,0 +1,124 @@
+// out: ./styl.css, compress: true, sourceMap: true
+@import "normalize", "rem", "font", "color", "mixin", "default";
+
+/* basic */
+
+
+* {
+  // @include ani(0.3s);
+}
+
+html {
+  min-width: $min-width;
+  max-width: 100%;
+  font-size: 14px;
+  height: -webkit-fill-available;
+}
+
+html,
+body {
+  font-family: $myfont, "Malgun Gothic", "apple sd gothic neo", sans-serif;
+
+  @media (max-width: $screen-size-mobile) {
+    &.lock {
+      height: 100vh;
+      overflow: hidden;
+    }
+  }
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+
+  .container {
+    @include container(100%);
+    text-align: left;
+    vertical-align: top;
+    padding: 0 15px;
+
+    @media (min-width: $screen-size-pc) {
+      @include container($screen-size-pc);
+      padding: 0 40px;
+    }
+  }
+
+  /* header */
+  header {
+    text-align: center;
+    position: absolute;
+    z-index: 1200;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-bottom:1px solid #E4E4E4;
+    background:#fff;
+
+    .container {
+      height: 56px;
+
+      @media (min-width: $screen-size-pc) {
+        height: 90px;
+      }
+
+      h1 {
+
+
+        @media (min-width: $screen-size-pc) {
+
+        }
+
+        a {
+          display: block;
+          height: 100%;
+          // background:
+         }
+      }
+
+      button.main-menu {
+
+      }
+    }
+
+  }
+
+  nav#main-menu {}
+
+
+
+
+  div#content {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+
+    @media (min-width: $screen-size-pc) {
+
+    }
+
+    /* MAIN */
+    &.main {
+      font-size:0;
+
+
+      section.main-issue {
+
+
+      }
+    }
+
+    /* SUB */
+    &.sub {
+      min-height:800px;
+
+    }
+
+
+
+  }
+
+
+  footer#footer {
+
+  }
+}
