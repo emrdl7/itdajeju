@@ -1,124 +1,74 @@
 
 $(function(){
 
-    menu();
-    outlink();
-    mobileSubMenu();
-    unit();
-    plusminus();
 
 
-    $(window).on("resize", function(){
-        $("nav#main-menu h3 a").unbind();
-        menu();
+    $('#main-menu').on('mouseenter', function() {
+      $(this).addClass('active');
+    });
+
+    $('#main-menu').on('mouseleave', function() {
+        $(this).removeClass('active');
     });
 
 
-});
-
-
-/* ----- Window Size ----- */
-var windowh = $(window).height();
-var windowW = $(window).width();
-
-$(window).on("resize", function(){
-    windowh = $(window).height();
-    windowW = $(window).width();
-});
-
-
-/* ----- menu ----- */
-function menu() {
-
-
-    $("button.main-menu").on("click", function () {
-        $("#main-menu").toggleClass("on");
-        
-    });
-
-    $("nav#main-menu button.close").on("click", function () {
-
-        $("#main-menu").toggleClass("on");
-    });
-
-    // $("nav#main-menu h3 a").on("click", function (e) {
-        
-    //     $("nav#main-menu h3").removeClass("on");
-
-
-
-    //     if (windowW < 1200 && $(this).parent().parent().find("ul").length) {
-
-    //         $(this).parent().addClass("on");
-    //         e.preventDefault();
-
-    //     }
-    //     else {
-    //         $("nav#main-menu h3 a").unbind();
-
-    //     }
-    // });
-
-    $("nav#main-menu div.menus h3 a").on("mouseenter", function(){
-        $("nav#main-menu div.menus>ul>li").removeClass("on");
-        $(this).parent().parent().addClass("on");
-    });
-
-    $("nav#main-menu div.menus>ul>li ul").on("mouseleave", function(){
-        $(this).parent().removeClass("on");
-    });
-
-}
-
-
-/* ----- outlink ----- */ 
-function outlink() {
-    $(".site-links button").click(function() {
+    $(".main-menu").click(function() {
         $(this).toggleClass("on");
-    });
-}
-
-
-/* ----- mobileSubMenu ----- */ 
-function mobileSubMenu() {
-
-    $("aside a.on").on("click", function(e) {
-
-        if (windowW < 1200) {
-
-            $("aside ul").toggleClass("on");
-            e.preventDefault();
-
-        }
-    });
-}
-
-
-/* ----- unit ----- */ 
-function unit() {
-
-    $(".order .unit input").change(function() {
-
-        $(".order .unit p").removeClass("on");
-        $(".order .unit p."+ $(this).attr("id")).addClass("on");
-        
-    });
-}
-
-
-/* ----- plusminus ----- */ 
-function plusminus() {
-
-    $(".order .number .plus").click(function(){
-        var currentValue = parseInt($(this).parent().find("input").val());
-        $(this).parent().find("input").val(currentValue + 1);
+        $("#main-menu").toggleClass("on");
     });
 
-    $(".order .number .minus").click(function(){
-        var currentValue = parseInt($(this).parent().find("input").val());
-        if (currentValue > 0) {
-            $(this).parent().find("input").val(currentValue - 1);
-        }
+    const swiper = new Swiper(".main-swiper", {
+      speed: 3000,
+      spaceBetween: 0,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+      },
+      navigation: {
+        nextEl: ".main-next",
+        prevEl: ".main-prev",
+      },
+      pagination: {
+        el: '.main-pagination',
+        type: 'fraction',
+      },
     });
 
-}
+
+    let swiper2 = null;
+
+    function initializeSwiper() {
+      if (window.innerWidth >= 1200 && !swiper2) {
+        swiper2 = new Swiper(".farm-slider", {
+          speed: 3000,
+          spaceBetween: 0,
+          loop: true,
+          autoplay: {
+            delay: 5000,
+          },
+          pagination: {
+            el: '.farm-pagination',
+            type: 'bullets',
+          },
+        });
+      }
+    }
+    
+    function destroySwiper() {
+      if (window.innerWidth < 1200 && swiper2) {
+        swiper2.destroy(true, true);
+        swiper2 = null;
+      }
+    }
+    
+    // 페이지 로드 시 초기화
+    initializeSwiper();
+    
+    // 윈도우 크기 조정 시 Swiper 초기화 또는 제거
+    window.addEventListener('resize', function() {
+      destroySwiper();
+      initializeSwiper();
+    });
+    
+
+});

@@ -75,20 +75,3 @@
 $myfont: 'Spoqa Han Sans Neo';
 
 
-@mixin txt($weight) {
-    @if $weight == thin {
-        font-weight:100;
-    }
-    @if $weight == light {
-        font-weight:300;
-    }
-    @else if $weight == regular { 
-        font-weight:400;
-    }
-    @else if $weight == normal {
-        font-weight:500;
-    }
-    @else if $weight == bold {
-        font-weight:700;
-    }
-}

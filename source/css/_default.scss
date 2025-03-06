@@ -1,81 +1,10 @@
 /* basic */
 $min-width: 360px;
 $img-url: "../images";
-$screen-size-pc: 1200px;
+$screen-size-pc: 1280px;
 $screen-size-mobile: max($screen-size-pc);
 
 
-.nowLoading {
-	position:fixed;
-	z-index:10000;
-	left:0;
-	top:0;
-	right:0;
-	bottom:0;
-	background:rgba(0,0,0,0.4);
-	text-align:center;
-
-	span {
-		display:block;
-		position:absolute;
-		left:50%;
-		top:50%;
-		transform:translateY(-50%) translateX(-50%);
-	}
-	i {
-		font-size:180px;
-		color:#fff;
-	}
-}
-
-div.status {
-	width:320px;
-	height:128px;
-	margin:0 auto 40px;
-	font-size:0;
-	margin:30px auto 0;
-
-	&.step1 {
-		background:url(../images/step1.svg) no-repeat center / 100% auto;
-	}
-
-	&.step2 {
-		background:url(../images/step2.svg) no-repeat center / 100% auto;
-	}
-
-	&.step3 {
-		background:url(../images/step3.svg) no-repeat center / 100% auto;
-	}
-
-	&.step4 {
-		background:url(../images/step4.svg) no-repeat center / 100% auto;
-	}
-                
-	@media (min-width: $screen-size-pc) {
-		width:540px;
-		height:210px;
-		margin-bottom:60px;
-	} 
-}
-
-
-div.result-text {
-	background:#e4e4e4;
-	font-size:14px;
-	text-align:center;
-	padding:20px 20px 10px;
-	margin:0 0 20px;
-
-
-	@media (min-width: $screen-size-pc) {
-	  font-size:16px;
-	}
-
-	p {
-	  word-break:keep-all;
-	  margin:0 0 10px;
-	}
-  }
 
 .pagenation {
 	display: inline-block;
@@ -135,7 +64,7 @@ div.result-text {
 * {
 	@include box-sizing;
 }
-s
+
 input[type="password"] {
 	font-family: sans-serif;
 
@@ -168,21 +97,81 @@ input[type="password"] {
 input,
 select,
 textarea {
-	@include border-radius(0);
 	background:#fff;
-	/*
-        @media all and (max-width: 1199px) {
-            appearance: none;
-            -moz-appearance: none;
-            -ms-appearance: none;
-            -webkit-appearance: none;
-
-            &::-ms-expand {
-                display: none;
-            }
-        }
-    */
 }
+
+.input-box {
+
+	span.item {
+		display:inline-block;
+		width:100%;
+		margin:0 0 50px;
+
+		input[type="text"],
+		input[type="password"],
+		input[type="date"],
+		select {
+			
+			@include border-radius(8px);
+			background:#fff;
+			border:1px solid #E3E8EC;
+			padding:0 15px;
+			outline:none;
+			font-size:16px;
+			color:#021526;
+			width:100%;
+			height:52px;
+
+			&:focus {
+				border-color:#03346E;
+			}
+
+			&:read-only {
+				border-color:#E3E8EC;
+				background:#F4F7FA;
+				color:#939FAF;
+			}
+
+			&::placeholder {
+				color:#939FAF;
+			}
+
+			&.error {
+				border-color:#FF5353;
+			}
+		}
+
+		i.warning {
+			color:#FF473C;
+			margin:12px 0 0;
+			font-size:13px;
+		}
+
+	}
+
+}
+
+
+p.check-box {
+	position:relative;
+	padding-left:46px;
+	font-size:13px;
+	margin:16px 0;
+	color:#A9A9A9;
+
+	input[type="checkbox"] {
+		position:absolute;
+		left:16px;
+		top:50%;
+		transform:translateY(-50%);
+		width:24px;
+		height:24px;
+		border:1px solid #e3e3e3;
+		border-radius:4px;
+	}
+}
+
+
 
 a {
 	text-decoration: none;
@@ -195,61 +184,15 @@ button {
 }
 
 /* default btn */
-.button-set {
+.btn {
+	display:block;
 	text-align:center;
-	margin:34px auto 40px;
-	font-size:0;
-	white-space:nowrap;
 
-	@media (min-width: $screen-size-pc) {
-		margin:40px auto;
-	}
 
-	a,
-	button {
-		display:inline-block;
-		vertical-align:top;
-		font-size:18px;
-		margin:0 5px;
-		font-weight:700;
+	&.main {
+		background:#6EACDA;
 		color:#fff;
-		background:#777777;
-		border-radius:10px;
-		padding:0 4px;
-		width:184px;
-		max-width:33%;
-		line-height:56px;
-		border:none;
-		border:1px solid transparent;
-
-		@media (min-width: $screen-size-pc) {
-			font-size:20px;
-			margin:0 10px;
-			line-height:74px;
-		}
-
-		&.sub {
-			background:#fff;
-			color:#222;
-			border-color:#ccc;
-		}
-
-		&.main {
-			background:#1276C0;
-		}
-	}
-
-	&.three {
-
-		a,
-		button {
-			width:auto;
-			padding:0 15px ;
-
-			@media (min-width: $screen-size-pc) {
-				padding:0 55px;
-			}
-		}
+		font-weight:700;
 	}
 }
 
