@@ -1985,7 +1985,7 @@ body footer#footer div.container h2 {
   margin: 0 auto 20px;
   width: 130px;
   height: 36px;
-  background: url(../images/logo.svg) no-repeat center/100% auto;
+  background: url(../images/logo.png) no-repeat center/100% auto;
 }
 @media (min-width: 1280px) {
   body footer#footer div.container h2 {
@@ -1994,8 +1994,8 @@ body footer#footer div.container h2 {
     top: 50%;
     transform: translateY(-50%);
     margin: 0;
-    width: 177px;
-    height: 44px;
+    width: 165px;
+    height: 47px;
   }
 }
 body footer#footer div.container ul.footer-util {
