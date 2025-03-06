@@ -2064,6 +2064,9 @@ body footer#footer div.container address p span {
     position: relative;
   }
 }
+body footer#footer div.container address p span a {
+  display: inline !important;
+}
 @media (min-width: 1280px) {
   body footer#footer div.container address p span + span {
     margin-left: 24px;

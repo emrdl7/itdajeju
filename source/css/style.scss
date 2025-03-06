@@ -1540,6 +1540,10 @@ body {
               display:inline-block;
               position:relative;
             }
+
+            a {
+              display:inline !important;
+            }
           }
   
           @media (min-width: $screen-size-pc) {
