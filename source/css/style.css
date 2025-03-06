@@ -914,18 +914,24 @@ body header .container button.main-menu.on {
   body nav#main-menu.on {
     display: block;
   }
-  body nav#main-menu ul {
+  body nav#main-menu div.menus {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: scroll;
+  }
+  body nav#main-menu div.menus > ul {
     margin: 0;
     padding: 0 15px;
     list-style: none;
   }
-  body nav#main-menu ul li {
+  body nav#main-menu div.menus > ul > li h3 {
+    margin: 0;
     background: url(../images/ic_arrow1.svg) no-repeat right 6px center/44px auto;
   }
-  body nav#main-menu ul li h3 {
-    margin: 0;
-  }
-  body nav#main-menu ul li h3 a {
+  body nav#main-menu div.menus > ul > li h3 a {
     display: block;
     border-bottom: 1px solid #E3E8EC;
     line-height: 60px;
@@ -937,26 +943,38 @@ body header .container button.main-menu.on {
     background-size: 18px auto;
     background-repeat: no-repeat;
   }
-  body nav#main-menu ul li h3 a.menu1 {
+  body nav#main-menu div.menus > ul > li h3 a.menu1 {
     background-image: url(../images/ic_menu1.svg);
   }
-  body nav#main-menu ul li h3 a.menu2 {
+  body nav#main-menu div.menus > ul > li h3 a.menu2 {
     background-image: url(../images/ic_menu2.svg);
   }
-  body nav#main-menu ul li h3 a.menu3 {
+  body nav#main-menu div.menus > ul > li h3 a.menu3 {
     background-image: url(../images/ic_menu3.svg);
   }
-  body nav#main-menu ul li h3 a.menu4 {
+  body nav#main-menu div.menus > ul > li h3 a.menu4 {
     background-image: url(../images/ic_menu4.svg);
   }
-  body nav#main-menu ul li h3 a.menu5 {
+  body nav#main-menu div.menus > ul > li h3 a.menu5 {
     background-image: url(../images/ic_menu5.svg);
   }
-  body nav#main-menu ul li h3 a.menu6 {
+  body nav#main-menu div.menus > ul > li h3 a.menu6 {
     background-image: url(../images/ic_menu6.svg);
   }
-  body nav#main-menu ul li h3 a.menu7 {
+  body nav#main-menu div.menus > ul > li h3 a.menu7 {
     background-image: url(../images/ic_menu7.svg);
+  }
+  body nav#main-menu div.menus > ul > li ul {
+    list-style: none;
+    margin: 0;
+    padding: 15px;
+    background: #efefef;
+  }
+  body nav#main-menu div.menus > ul > li ul li a {
+    display: block;
+    font-size: 14px;
+    color: #021526;
+    line-height: 26px;
   }
 }
 @media (min-width: 1280px) {

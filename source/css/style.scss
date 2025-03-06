@@ -171,66 +171,92 @@ body {
       &.on {
         display:block;
       }
+
+      div.menus {
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        overflow-y:scroll;
   
-      ul {
-        margin:0;
-        padding:0 15px;
-        list-style:none;
-  
-  
-        li {
-          background:url(../images/ic_arrow1.svg) no-repeat right 6px center / 44px auto;
-  
-          h3 {
-            margin:0;
-  
-            a {
-              display:block;
-              border-bottom:1px solid #E3E8EC;
-              line-height:60px;
-              color:#021526;
-              font-size:16px;
-              font-weight:500;
-              padding-left:38px;
-              background-position: left 8px center;
-              background-size: 18px auto;
-              background-repeat:no-repeat;
-  
-              
-              &.menu1 {
-                background-image:url(../images/ic_menu1.svg);
+        &>ul {
+          margin:0;
+          padding:0 15px;
+          list-style:none;
+    
+    
+          &>li {
+    
+            h3 {
+              margin:0;
+              background:url(../images/ic_arrow1.svg) no-repeat right 6px center / 44px auto;
+    
+              a {
+                display:block;
+                border-bottom:1px solid #E3E8EC;
+                line-height:60px;
+                color:#021526;
+                font-size:16px;
+                font-weight:500;
+                padding-left:38px;
+                background-position: left 8px center;
+                background-size: 18px auto;
+                background-repeat:no-repeat;
+    
+                
+                &.menu1 {
+                  background-image:url(../images/ic_menu1.svg);
+                }
+    
+                &.menu2 {
+                  background-image:url(../images/ic_menu2.svg);
+                }
+    
+                &.menu3 {
+                  background-image:url(../images/ic_menu3.svg);
+                }
+    
+                &.menu4 {
+                  background-image:url(../images/ic_menu4.svg);
+                }
+    
+                &.menu5 {
+                  background-image:url(../images/ic_menu5.svg);
+                }
+    
+                &.menu6 {
+                  background-image:url(../images/ic_menu6.svg);
+                }
+    
+                &.menu7 {
+                  background-image:url(../images/ic_menu7.svg);
+                }
+    
+    
               }
-  
-              &.menu2 {
-                background-image:url(../images/ic_menu2.svg);
-              }
-  
-              &.menu3 {
-                background-image:url(../images/ic_menu3.svg);
-              }
-  
-              &.menu4 {
-                background-image:url(../images/ic_menu4.svg);
-              }
-  
-              &.menu5 {
-                background-image:url(../images/ic_menu5.svg);
-              }
-  
-              &.menu6 {
-                background-image:url(../images/ic_menu6.svg);
-              }
-  
-              &.menu7 {
-                background-image:url(../images/ic_menu7.svg);
-              }
-  
-  
+    
             }
-  
+
+            ul {
+              list-style:none;
+              margin:0;
+              padding:15px;
+              background:#efefef;
+
+              li {
+                a {
+                  display:block;
+                  font-size:14px;
+                  color:#021526;
+                  line-height:26px;
+                }
+              }
+            }
+    
           }
-  
         }
+
       }
   
     }
