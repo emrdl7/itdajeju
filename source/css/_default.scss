@@ -117,6 +117,7 @@ textarea {
 		input[type="date"],
 		input[type="tel"],
 		input[type="number"],
+		input[type="time"],
 		select {
 			
 			@include border-radius(8px);
@@ -135,14 +136,37 @@ textarea {
 			&::placeholder {
 				color:#939FAF;
 			}
+		}
 
-			&.error {
-				border-color:#FF5353;
-			}
+		textarea {
+
+			@include border-radius(8px);
+			background:#fff;
+			padding:15px;
+			outline:none;
+			font-size:16px;
+			color:#021526;
+			width:100%;
+			border:none;
+			background:#fff;
+			line-height:1.6;
+			height:124px;
+			
+		}
+		
+
+
+		&.error {
+			border-color:#FF5353;
 		}
 
 		&:focus-within {
 			border-color:#03346E;
+		}
+
+		&.expert {
+			padding-left:40px;
+			background:url(../images/ic_expert_search.svg) no-repeat left 16px center / 19px auto
 		}
 
 
@@ -186,11 +210,13 @@ textarea {
 			
 		}
 
-		&:has(input:read-only) {
+		&:has(input:read-only),
+		&:has(textarea:read-only) {
 			border-color:#E3E8EC;
 			background:#F4F7FA;
 
-			input {
+			input,
+			textarea {
 				background:transparent;
 				color:#939FAF;
 			}
@@ -235,6 +261,27 @@ textarea {
 					background-image:url(../images/ic_eye_show.svg);
 				}
 			}
+		}
+
+		&:has(button.date) {
+
+			input {
+				width:calc(100% - 40px);
+			}
+
+			button {
+				vertical-align:top;
+				font-size:0;
+				border:none;
+				height:52px;
+				background:url(../images/ic_calendar.svg) no-repeat center / 18px auto;
+				width:32px;
+
+				&.disable {
+					background-image:url(../images/ic_calendar_disable.svg);
+				}
+			}
+
 		}
 
 
@@ -312,6 +359,99 @@ textarea {
 		}
 	}
 }
+
+
+
+
+ul.photo-list {
+	list-style:none;
+	margin:0;
+	padding:0;
+	font-size:0;
+
+	li {
+	  position:relative;
+	  margin:0 0 16px;
+
+	  @media (min-width: $screen-size-pc) {
+		display:inline-block;
+		width:calc((100% - 20px)/2);
+
+		&:nth-child(odd) {
+		  margin-right:20px;
+		};
+	  }
+
+	  p.image,
+	  p.video {
+		display:block;
+		position:relative;
+		margin:0 0 10px;
+		width:100%;
+		height:200px;
+		border-radius:12px;
+		overflow:hidden;
+
+		img {
+		  width:100%;
+		  height:100%;
+		  object-fit:cover;
+		}
+
+		&.image {
+
+			&::before {
+				content:"";
+				display:block;
+				position:absolute;
+				left:12px;
+				bottom:12px;
+				width:18px;
+				height:18px;
+				background:url(../images/ic_image.svg) no-repeat center / 100% auto;
+			}
+
+		}
+
+		&.video {
+
+			&::before {
+				content:"";
+				display:block;
+				position:absolute;
+				left:12px;
+				bottom:12px;
+				width:18px;
+				height:18px;
+				background:url(../images/ic_video.svg) no-repeat center / 100% auto;
+			}
+
+		}
+	  }
+
+	  strong {
+		font-size:13px;
+		font-weight:400;
+		color: #021526;
+
+	  }
+
+	  button {
+		position:absolute;
+		right:0;
+		bottom:0;
+		font-size:13px;
+		border:none;
+		background:none;
+		margin:0;
+		padding:0;
+		color:#FF5353;
+	  }
+	}
+  }
+
+
+
 
 
 p.check-box {
@@ -411,6 +551,122 @@ div.table-type1 {
   }
 
 
+  div.table-type2 {
+	border:1px solid #E3E8EC;
+	border-radius:12px;
+	overflow:hidden;
+	margin:0 0 16px;
+
+	table {
+	  width:100%;
+	
+	
+	  
+	  th,
+	  td {
+		position:relative;
+		border-right:1px solid #E3E8EC;
+		border-top:1px solid #E3E8EC;
+		text-align:center;
+		padding:14px 0;
+		font-size:16px;
+		color:#021526;
+	}
+
+
+	  th {
+		color:#6EACDA;
+		font-weight:500;
+		background:#F4F7FA;
+	  }
+
+	  td {
+
+		&:last-of-type {
+		  border-right:none;
+		}
+
+		&.text {
+			text-align:left;
+			padding:14px 16px;
+			line-height:1.6;
+		}
+
+	  }
+
+	  tr:first-child {
+		th,
+		td {
+			border-top:none;
+		}
+	  }
+	  
+
+	}
+	
+  }
+  
+
+
+  div.card {
+	border:2px solid #E3E8EC;
+	position:relative;
+	border-radius:12px;
+	min-height:140px;
+	padding:16px 16px 16px 122px;
+	margin:0 0 16px;
+
+	&.selected {
+		border-color:#03346E;
+	}
+
+	p.image {
+	  position:absolute;
+	  left:8px;
+	  top:8px;
+	  margin:0;
+	  width:100px;
+	  height:120px;
+	  overflow:hidden;
+	  border-radius:8px;
+
+	  img {
+		width:100%;
+		height:100%;
+		object-fit:cover;
+	  }
+	}
+
+	ul {
+	  list-style:none;
+	  margin:0;
+	  padding:0;
+
+	  li {
+		position:relative;
+		font-size:16px;
+		margin-bottom:10px;
+		padding-left:55px;
+		color:#021526;
+		word-break:keep-all;
+
+		&:last-child {
+		  margin-bottom:0;
+		}
+
+		strong {
+		  display:block;
+		  position:absolute;
+		  left:0;
+		  top:0;
+		  color:#6EACDA;
+		  font-weight:500;
+		}
+	  }
+	}
+
+  }
+
 
 
 a {
@@ -440,6 +696,13 @@ button {
 		font-weight:700;
 	}
 
+
+	&.del {
+		background:#FFEBEB;
+		color:#FF5353;
+		font-weight:700;
+	}
+
 	&.sub {
 		background:#B3BDCD;
 		color:#fff;
@@ -461,6 +724,28 @@ button {
 		border-radius:8px;
 		margin:40px 0;
 	  }
+
+	  &.left {
+		right:auto;
+		width:50%;
+
+		@media (min-width: $screen-size-pc) {
+		  display:block;
+		  width:100%;
+		  margin-bottom:10px;
+		}
+	  }
+
+	  &.right {
+		left:auto;
+		width:50%;
+
+		@media (min-width: $screen-size-pc) {
+		  display:block;
+		  width:100%;
+		  margin-top:10px;
+		}
+	  }
 	}
 
 	&.plus {
@@ -473,6 +758,34 @@ button {
 			width:18px;
 			height:18px;
 			background:url(../images/ic_plus.svg) no-repeat center / 100% auto;
+		
+		}
+	}
+
+	&.write {
+		&::before {
+			content:"";
+			display:inline-block;
+			position:relative;
+			top:3px;
+			margin:0 10px 0 0;
+			width:18px;
+			height:18px;
+			background:url(../images/ic_write.svg) no-repeat center / 100% auto;
+		
+		}
+	}
+
+	&.qustion {
+		&::before {
+			content:"";
+			display:inline-block;
+			position:relative;
+			top:3px;
+			margin:0 10px 0 0;
+			width:18px;
+			height:18px;
+			background:url(../images/ic_qustion.svg) no-repeat center / 100% auto;
 		
 		}
 	}
@@ -594,6 +907,34 @@ button {
 						color:#FF473C;
 					}
 					
+				}
+			}
+
+			button.submit {
+				border:none;
+				line-height:56px;
+				border-radius:12px;
+				font-size:16px;
+				margin:34px 0 24px;
+			}
+		}
+
+		div.expert {
+			padding:20px 0 0;
+			max-height:60vh;
+			overflow-y:scroll;
+
+
+			div.no-expert {
+				font-size:16px;
+				color:#021526;
+				text-align:center;
+				padding:100px 0 60px;
+				background:url(../images/ic_noexpert.svg) no-repeat top 40px center / 38px auto;
+
+				span {
+					line-height:1.6;
+					display:block;
 				}
 			}
 

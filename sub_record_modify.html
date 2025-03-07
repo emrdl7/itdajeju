@@ -103,55 +103,63 @@
                 <div class="container">
 
                     <h4 class="stitle">
-                        모니터링
-
-                        <small class="tag"><span>고산목장 ID-3123</span></small>
-                    
+                        영농 일지 작성
                     </h4>
 
                     <div class="input-box monitoring">
-                        <h5 class="btitle">모니터링 시각</h5>
     
                         <span class="item">
+                            <label for="date">작성일자</label>
                             <input type="text" value="2025/02/18">
                             <button class="date">날짜선택</button>
                         </span>
 
                         <hr />
 
-                        <h5 class="btitle">모니터링 요약</h5>
+                        <span class="item">
+                            <label for="id">농장 ID</label>
+                            <select id="id">
+                                <option>고산목장 ID-3123</option>
+                            </select>
+                        </span>
+    
+                        <span class="item">
+                            <label for="farm1">농장정보</label>
+                            <input id="farm1" type="text" value="양정은">
+                        </span>
+    
+                        <span class="item">
+                            <label for="farm2" class="sr-only">농장정보2</label>
+                            <input id="farm2" type="text" value="비닐하우스">
+                        </span>
+    
+                        <span class="item">
+                            <label for="farm3" class="sr-only">농장정보3</label>
+                            <input id="farm3" type="text" value="감귤">
+                        </span>
 
-                        <div class="text-box">
-                            지난해 11월 현대자동차는 미국 로스앤젤레스에서 '아이오닉9 월드프리미어' 행사를 열며 국내 언론사를 포함해 전 세계 외신들을 초청했다. 
-                        </div>
-
-                        <hr />
-
-                        <h5 class="btitle">내부센서 현황</h5>
-
-                
-                        <ul class="type1">
-                            <li>
-                                <span>온도<strong>15<u>℃</u></strong></span>
-                            </li>
-                            <li>
-                                <span>습도<strong>56<u>%</u></strong></span>
-                            </li>
-                            <li>
-                                <span><a href="">이미지 보기</a></span>
-                            </li>
-                        </ul>
 
                         <hr />
 
                         <h5 class="btitle">
-                            외부 환경
-                            <small>18:12 측정기준</small>
+                            영농일지 요약
                         </h5>
 
+                        <span class="item">
+                            <textarea readonly>지난해 11월 현대자동차는 미국 로스앤젤레스에서 '아이오닉9 월드프리미어' 행사를 열며 국내 언론사를 포함해 전 세계 외신들을 초청했다.</textarea>
+                        </span>
+
+                        <hr />
+
+
+                        <h5 class="btitle">
+                            저장시점 지역 기상 정보
+
+                            <small>18:12</small>
+                        </h5>
 
                 
-                        <ul class="type1">
+                        <ul class="type1 disable">
                             <li>
                                 <span>최저 기온<strong>15<u>℃</u></strong></span>
                             </li>
@@ -163,7 +171,7 @@
                             </li>
                         </ul>
                 
-                        <ul class="type2">
+                        <ul class="type2 disable">
                             <li>
                                 <span>현재기온<strong>15<u>℃</u></strong></span>
                             </li>
@@ -175,22 +183,78 @@
                             </li>
                         </ul>
                 
-                        <div class="alert">
-                            제주시 전역에 풍랑주의보 발효중
-                            제주시 전역에 풍랑주의보 발효중
-                        </div>
-
-
-                        <div class="text-box">
+                        <div class="alert disable">
                             <a href="">
-                                지난해 11월 현대자동차는 미국 로스앤젤레스에서 '아이오닉9 월드프리미어' 행사를 열며 국내 언론사를 포함해 전 세계 외신들을 초청했다. 
+                                제주시 전역에 풍랑주의보 발효중
+                                제주시 전역에 풍랑주의보 발효중
                             </a>
                         </div>
+
+                        <hr />
+
+
+                        <h5 class="btitle">
+                            농약/비료 활동
+                        </h5>
+
+
+                        <span class="item">
+                            <textarea>지난해 11월 현대자동차는 미국 로스앤젤레스에서 '아이오닉9 월드프리미어' 행사를 열며 국내 언론사를 포함해 전 세계 외신들을 초청했다.</textarea>
+                        </span>
+
+                        <h5 class="btitle">
+                            작업 내용
+                        </h5>
+
+                        <span class="item">
+                            <select>
+                                <option>농약살포</option>
+                            </select>
+                        </span>
+
+                        <h5 class="btitle">
+                            세부 내용
+                        </h5>
+
+                        <a class="btn voice" href="">음성으로 기록하기</a>
+
+                        <span class="item">
+                            <textarea>지난해 11월 현대자동차는 미국 로스앤젤레스에서 '아이오닉9 월드프리미어' 행사를 열며 국내 언론사를 포함해 전 세계 외신들을 초청했다.</textarea>
+                        </span>
+
+
+                        <h5 class="btitle file">
+                            파일 첨부
+                        </h5>
+
+                        <a class="btn file" href="">첨부할 파일 선택</a>
+
+
+                        <ul class="photo-list">
+                            <li>
+                                <p class="image">
+                                    <img src="source/images/tmp01.png" alt="">
+                                </p>
+                                <strong>2025-04-45-01.jpg</strong>
+                                <button class="delete">삭제하기</button>
+                            </li>
+                            <li>
+                                <p class="video">
+                                    <img src="source/images/tmp02.png" alt="">
+                                </p>
+                                <strong>2025-04-45-01.jpg</strong>
+                                <button class="delete">삭제하기</button>
+                            </li>
+                        </ul>
+                        
+
+
+
                     </div>
 
 
 
-                    <a class="btn main plus fixed" href="">농장추가</a>
+                    <a class="btn main fixed" href="">저장하기</a>
 
 
                 </div>
@@ -205,6 +269,45 @@
         <!-- E:subContent -->
 
 
+
+
+
+        <div class="modal"><!-- 오픈 시 클래스명 추가 : on -->
+            <div class="modal-content">
+                <h2>파일첨부</h2>
+
+                <div class="file">
+
+
+                    <button class="btn add-photo">파일선택</button>
+
+                    <ul>
+                        <li>
+                            <span>cluster-maker1.png</span>
+                            <button>삭제</button>
+                        </li>
+                        <li>
+                            <span>cluster-maker1.png</span>
+                            <button>삭제</button>
+                        </li>
+                        <li>
+                            <span>cluster-maker1.png</span>
+                            <button>삭제</button>
+                        </li>
+                        <li>
+                            <span>cluster-maker1asd fasdf asdf asdf asdfa sdf asdf .png</span>
+                            <button>삭제</button>
+                        </li>
+                    </ul>
+
+                    <button class="btn main submit">업로드</button>
+
+
+                </div>
+
+                <button class="close">창닫기</button>
+            </div>
+        </div>
 
 
 

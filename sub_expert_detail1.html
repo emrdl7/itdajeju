@@ -103,94 +103,113 @@
                 <div class="container">
 
                     <h4 class="stitle">
-                        모니터링
-
-                        <small class="tag"><span>고산목장 ID-3123</span></small>
-                    
+                        전문가 문의
                     </h4>
 
-                    <div class="input-box monitoring">
-                        <h5 class="btitle">모니터링 시각</h5>
+                    <div class="input-box expert">
+    
+
+                        <span class="item">
+                            <label>농장 ID</label>
+                            <input type="text" readonly value="고산목장 ID-3123">
+                        </span>
     
                         <span class="item">
-                            <input type="text" value="2025/02/18">
-                            <button class="date">날짜선택</button>
+                            <label>사용자명</label>
+                            <input type="text" readonly value="양정은">
+                        </span>
+    
+                        <span class="item">
+                            <label>문의유형</label>
+                            <input type="text" readonly value="병충해">
                         </span>
 
                         <hr />
 
-                        <h5 class="btitle">모니터링 요약</h5>
+                        <h5 class="btitle">
+                            전문가 선택
+                        </h5>
 
-                        <div class="text-box">
-                            지난해 11월 현대자동차는 미국 로스앤젤레스에서 '아이오닉9 월드프리미어' 행사를 열며 국내 언론사를 포함해 전 세계 외신들을 초청했다. 
+                        <a class="btn expert disable" href="">분야별 전문가 검색</a>
+
+                        <div class="card selected">
+                            <p class="image"><img src="source/images/tmp03.png" alt=""></p>
+
+                            <ul>
+                                <li>
+                                    <strong>분야</strong>
+                                    병충해, 작물
+                                </li>
+                                <li>
+                                    <strong>연락처</strong>
+                                    010-5579-0123
+                                </li>
+                                <li>
+                                    <strong>주소</strong>
+                                    경상북도 고령군 성산면 성산로 1014-0
+                                </li>
+                            </ul>
                         </div>
 
-                        <hr />
-
-                        <h5 class="btitle">내부센서 현황</h5>
-
-                
-                        <ul class="type1">
-                            <li>
-                                <span>온도<strong>15<u>℃</u></strong></span>
-                            </li>
-                            <li>
-                                <span>습도<strong>56<u>%</u></strong></span>
-                            </li>
-                            <li>
-                                <span><a href="">이미지 보기</a></span>
-                            </li>
-                        </ul>
-
-                        <hr />
+                        <h5 class="btitle">
+                            증상 발견 시점
+                        </h5>
+    
+                        <span class="item">
+                            <input type="text" readonly value="2025/02/18">
+                            <button class="date disable">날짜선택</button>
+                        </span>
+    
+                        <span class="item">
+                            <input type="time" readonly value="08:56:00">
+                        </span>
 
                         <h5 class="btitle">
-                            외부 환경
-                            <small>18:12 측정기준</small>
+                            문의내용
                         </h5>
 
 
-                
-                        <ul class="type1">
-                            <li>
-                                <span>최저 기온<strong>15<u>℃</u></strong></span>
-                            </li>
-                            <li>
-                                <span>현재 기온<strong>15<u>℃</u></strong></span>
-                            </li>
-                            <li>
-                                <span>최고 기온<strong>15<u>℃</u></strong></span>
-                            </li>
-                        </ul>
-                
-                        <ul class="type2">
-                            <li>
-                                <span>현재기온<strong>15<u>℃</u></strong></span>
-                            </li>
-                            <li>
-                                <span class="hum">습도<strong>56<u>%</u></strong></span>
-                            </li>
-                            <li>
-                                <span class="rain">강수량<strong>56<u>%</u></strong></span>
-                            </li>
-                        </ul>
-                
-                        <div class="alert">
-                            제주시 전역에 풍랑주의보 발효중
-                            제주시 전역에 풍랑주의보 발효중
-                        </div>
+                        <span class="item">
+                            <textarea readonly>지난해 11월 현대자동차는 미국 로스앤젤레스에서 '아이오닉9 월드프리미어' 행사를 열며 국내 언론사를 포함해 전 세계 외신들을 초청했다.</textarea>
+                        </span>
+
+                        <hr />
 
 
-                        <div class="text-box">
-                            <a href="">
-                                지난해 11월 현대자동차는 미국 로스앤젤레스에서 '아이오닉9 월드프리미어' 행사를 열며 국내 언론사를 포함해 전 세계 외신들을 초청했다. 
-                            </a>
-                        </div>
+                        <h5 class="btitle file">
+                            파일 첨부
+                        </h5>
+
+                        <a class="btn file disable" href="">첨부할 파일 선택</a>
+
+
+                        <ul class="photo-list">
+                            <li>
+                                <p class="image">
+                                    <img src="source/images/tmp01.png" alt="">
+                                </p>
+                                <!-- <strong>2025-04-45-01.jpg</strong>
+                                <button class="delete">삭제하기</button> -->
+                            </li>
+                            <li>
+                                <p class="video">
+                                    <img src="source/images/tmp02.png" alt="">
+                                </p>
+                                <!-- <strong>2025-04-45-01.jpg</strong>
+                                <button class="delete">삭제하기</button> -->
+                            </li>
+                        </ul>
+                        
+
+
+
                     </div>
 
 
 
-                    <a class="btn main plus fixed" href="">농장추가</a>
+
+                    <a class="btn main fixed left" href="">수정하기</a>
+                    <a class="btn del fixed right" href="">삭제하기</a>
 
 
                 </div>
@@ -205,6 +224,45 @@
         <!-- E:subContent -->
 
 
+
+
+
+        <div class="modal"><!-- 오픈 시 클래스명 추가 : on -->
+            <div class="modal-content">
+                <h2>파일첨부</h2>
+
+                <div class="file">
+
+
+                    <button class="btn add-photo">파일선택</button>
+
+                    <ul>
+                        <li>
+                            <span>cluster-maker1.png</span>
+                            <button>삭제</button>
+                        </li>
+                        <li>
+                            <span>cluster-maker1.png</span>
+                            <button>삭제</button>
+                        </li>
+                        <li>
+                            <span>cluster-maker1.png</span>
+                            <button>삭제</button>
+                        </li>
+                        <li>
+                            <span>cluster-maker1asd fasdf asdf asdf asdfa sdf asdf .png</span>
+                            <button>삭제</button>
+                        </li>
+                    </ul>
+
+                    <button class="btn main submit">업로드</button>
+
+
+                </div>
+
+                <button class="close">창닫기</button>
+            </div>
+        </div>
 
 
 
