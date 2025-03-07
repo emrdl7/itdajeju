@@ -141,8 +141,6 @@ textarea {
 		}
 
 		&:focus-within {
-
-
 			border-color:#03346E;
 		}
 
@@ -187,7 +185,7 @@ textarea {
 			
 		}
 
-		&.read-only {
+		&:has(input:read-only) {
 			border-color:#E3E8EC;
 			background:#F4F7FA;
 
@@ -197,7 +195,7 @@ textarea {
 			}
 		}
 
-		&.wbtn {
+		&:has(button.send) {
 
 			input {
 				width:calc(100% - 80px);
@@ -215,7 +213,7 @@ textarea {
 			}
 		}
 
-		&.password {
+		&:has(button.eye) {
 
 			input {
 				width:calc(100% - 40px);

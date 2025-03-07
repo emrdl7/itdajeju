@@ -636,18 +636,26 @@ textarea {
   top: 50%;
   transform: translateY(-50%);
 }
-.input-box span.item.read-only {
+.input-box span.item:has(input:-moz-read-only) {
   border-color: #E3E8EC;
   background: #F4F7FA;
 }
-.input-box span.item.read-only input {
+.input-box span.item:has(input:read-only) {
+  border-color: #E3E8EC;
+  background: #F4F7FA;
+}
+.input-box span.item:has(input:-moz-read-only) input {
   background: transparent;
   color: #939FAF;
 }
-.input-box span.item.wbtn input {
+.input-box span.item:has(input:read-only) input {
+  background: transparent;
+  color: #939FAF;
+}
+.input-box span.item:has(button.send) input {
   width: calc(100% - 80px);
 }
-.input-box span.item.wbtn button {
+.input-box span.item:has(button.send) button {
   font-size: 13px;
   border: 2px solid #6EACDA;
   border-radius: 8px;
@@ -657,10 +665,10 @@ textarea {
   background: #fff;
   width: 72px;
 }
-.input-box span.item.password input {
+.input-box span.item:has(button.eye) input {
   width: calc(100% - 40px);
 }
-.input-box span.item.password button {
+.input-box span.item:has(button.eye) button {
   vertical-align: top;
   font-size: 0;
   border: none;
@@ -668,7 +676,7 @@ textarea {
   background: url(../images/ic_eye_hide.svg) no-repeat center/20px auto;
   width: 32px;
 }
-.input-box span.item.password.show button {
+.input-box span.item:has(button.eye).show button {
   background-image: url(../images/ic_eye_show.svg);
 }
 .input-box hr {
