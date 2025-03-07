@@ -1347,6 +1347,18 @@ body {
           margin:0 0 60px;
         }
       }
+          
+      h5.btitle {
+        margin:30px 0 20px;
+        font-size:16px;
+        font-weight:700;
+        color:#021526;
+
+        @media (min-width: $screen-size-pc) {
+          font-size:34px;
+          margin:0 0 60px;
+        }
+      }
 
       section.sub-contents {
         text-align:center;
@@ -1507,6 +1519,263 @@ body {
 
 
           }
+
+          div.my-data {
+
+            a.change-pw {
+              border:2px solid #6EACDA;
+              color:#6EACDA;
+              line-height:52px;
+              border-radius:12px;
+              font-size:16px;
+              margin:0 0 16px;
+              font-weight:700;
+
+              &::before {
+                content:"";
+                display:inline-block;
+                position:relative;
+                top:3px;
+                width:13px;
+                height:18px;
+                background:url(../images/ic_lock.svg) no-repeat center / 100% auto;
+                margin:0 12px 0 0;
+              }
+            }
+
+            button.add-photo {
+              border:2px dashed #6EACDA;
+              color:#6EACDA;
+              line-height:52px;
+              border-radius:12px;
+              font-size:16px;
+              margin:0 0 16px;
+              font-weight:700;
+
+              &::before {
+                content:"";
+                display:inline-block;
+                position:relative;
+                top:3px;
+                width:20px;
+                height:18px;
+                background:url(../images/ic_photo.svg) no-repeat center / 100% auto;
+                margin:0 12px 0 0;
+              }
+            }
+
+            ul.photo-list {
+              list-style:none;
+              margin:0;
+              padding:0;
+              font-size:0;
+
+              li {
+                position:relative;
+                margin:0 0 16px;
+
+                @media (min-width: $screen-size-pc) {
+                  display:inline-block;
+                  width:calc((100% - 20px)/2);
+
+                  &:nth-child(odd) {
+                    margin-right:20px;
+                  };
+                }
+
+                p.image {
+                  display:block;
+                  margin:0 0 10px;
+                  width:100%;
+                  height:200px;
+                  border-radius:12px;
+                  overflow:hidden;
+
+                  img {
+                    width:100%;
+                    height:100%;
+                    object-fit:cover;
+                  }
+                }
+
+                strong {
+                  font-size:13px;
+                  font-weight:400;
+                  color: #021526;
+
+                }
+
+                button {
+                  position:absolute;
+                  right:0;
+                  bottom:0;
+                  font-size:13px;
+                  border:none;
+                  background:none;
+                  margin:0;
+                  padding:0;
+                  color:#FF5353;
+                }
+              }
+            }
+          }
+
+          ul.farm-list {
+            list-style:none;
+            margin:0;
+            padding:0;
+            border-top:1px solid #E3E8EC;
+
+            li {
+
+              a {
+                display:block;
+                border-bottom:1px solid #E3E8EC;
+                line-height:60px;
+                padding:0 28px 0 8px;
+                font-size:16px;
+                white-space:nowrap;
+                overflow:hidden;
+                text-overflow:ellipsis;
+
+                background:url(../images/ic_arrow1.svg) no-repeat right center / 44px auto;
+
+                strong {
+                  font-weight:400;
+                  color:#021526;
+                }
+
+                span {
+                  font-weight:700;
+                  color:#6EACDA;
+                  padding-left:10px;
+                }
+              }
+            }
+          }
+
+          div.farm-data {
+
+
+
+
+            div.btn-box {
+              font-size:0;
+
+              .add-equipment {
+                border:2px solid #6EACDA;
+                color:#6EACDA;
+                line-height:52px;
+                border-radius:12px;
+                font-size:16px;
+                margin:0 0 16px;
+                font-weight:700;
+  
+                &::before {
+                  content:"";
+                  display:inline-block;
+                  position:relative;
+                  top:3px;
+                  width:18px;
+                  height:18px;
+                  background:url(../images/ic_plus2.svg) no-repeat center / 100% auto;
+                  margin:0 12px 0 0;
+                }
+              }
+
+              .add-barcode {
+                border:2px solid #6EACDA;
+                color:#6EACDA;
+                line-height:52px;
+                border-radius:12px;
+                font-size:16px;
+                margin:0 0 16px;
+                font-weight:700;
+  
+                &::before {
+                  content:"";
+                  display:inline-block;
+                  position:relative;
+                  top:3px;
+                  width:23px;
+                  height:18px;
+                  background:url(../images/ic_barcode.svg) no-repeat center / 100% auto;
+                  margin:0 12px 0 0;
+                }
+              }
+
+              .del-equipment {
+                border:2px solid #FF5353;
+                color:#FF5353;
+                line-height:52px;
+                border-radius:12px;
+                font-size:16px;
+                margin:0 0 16px;
+                font-weight:700;
+  
+                &::before {
+                  content:"";
+                  display:inline-block;
+                  position:relative;
+                  top:3px;
+                  width:18px;
+                  height:18px;
+                  background:url(../images/ic_minus.svg) no-repeat center / 100% auto;
+                  margin:0 12px 0 0;
+                }
+              }
+
+              .cancel {
+                border:2px solid #FF5353;
+                color:#FF5353;
+                line-height:52px;
+                border-radius:12px;
+                font-size:16px;
+                margin:0 0 16px;
+                font-weight:700;
+  
+                &::before {
+                  content:"";
+                  display:inline-block;
+                  position:relative;
+                  top:3px;
+                  width:18px;
+                  height:18px;
+                  background:url(../images/ic_cancel.svg) no-repeat center / 100% auto;
+                  margin:0 12px 0 0;
+                }
+              }
+
+              .big {
+                display:inline-block;
+                vertical-align:top;
+                width:calc(100% - 60px);
+              }
+
+              .small {
+                display:inline-block;
+                vertical-align:top;
+                position:relative;
+                font-size:0;
+                width:52px;
+                text-align:center;
+
+                &::before {
+                  margin:0;
+                  position:absolute;
+                  left:50%;
+                  top:50%;
+                  transform:translateY(-50%) translateX(-50%);
+                }
+              }
+
+              .btn + .btn {
+                margin-left:8px;
+              }
+
+            }
+          }
+
 
         }
       }

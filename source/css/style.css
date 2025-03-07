@@ -569,6 +569,7 @@ textarea {
 .input-box span.item input[type=password],
 .input-box span.item input[type=date],
 .input-box span.item input[type=tel],
+.input-box span.item input[type=number],
 .input-box span.item select {
   border-radius: 8px;
   -moz-background-clip: padding;
@@ -584,13 +585,14 @@ textarea {
   border: none;
   background: #fff;
 }
-.input-box span.item input[type=text]::-moz-placeholder, .input-box span.item input[type=password]::-moz-placeholder, .input-box span.item input[type=date]::-moz-placeholder, .input-box span.item input[type=tel]::-moz-placeholder, .input-box span.item select::-moz-placeholder {
+.input-box span.item input[type=text]::-moz-placeholder, .input-box span.item input[type=password]::-moz-placeholder, .input-box span.item input[type=date]::-moz-placeholder, .input-box span.item input[type=tel]::-moz-placeholder, .input-box span.item input[type=number]::-moz-placeholder, .input-box span.item select::-moz-placeholder {
   color: #939FAF;
 }
 .input-box span.item input[type=text]::placeholder,
 .input-box span.item input[type=password]::placeholder,
 .input-box span.item input[type=date]::placeholder,
 .input-box span.item input[type=tel]::placeholder,
+.input-box span.item input[type=number]::placeholder,
 .input-box span.item select::placeholder {
   color: #939FAF;
 }
@@ -598,34 +600,35 @@ textarea {
 .input-box span.item input[type=password].error,
 .input-box span.item input[type=date].error,
 .input-box span.item input[type=tel].error,
+.input-box span.item input[type=number].error,
 .input-box span.item select.error {
   border-color: #FF5353;
 }
 .input-box span.item:focus-within {
   border-color: #03346E;
 }
-.input-box span.item.select select {
+.input-box span.item:has(select) select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
-.input-box span.item.select select:-moz-read-only {
+.input-box span.item:has(select) select:-moz-read-only {
   background: #fff;
 }
-.input-box span.item.select select:read-only {
+.input-box span.item:has(select) select:read-only {
   background: #fff;
 }
-.input-box span.item.select.bold {
+.input-box span.item:has(select).bold {
   border: 2px solid #6EACDA;
   font-weight: 700;
 }
-.input-box span.item.select.bold select:-moz-read-only {
+.input-box span.item:has(select).bold select:-moz-read-only {
   color: #6EACDA;
 }
-.input-box span.item.select.bold select:read-only {
+.input-box span.item:has(select).bold select:read-only {
   color: #6EACDA;
 }
-.input-box span.item.select::after {
+.input-box span.item:has(select)::after {
   content: "";
   display: block;
   width: 10px;
@@ -678,6 +681,21 @@ textarea {
 }
 .input-box span.item:has(button.eye).show button {
   background-image: url(../images/ic_eye_show.svg);
+}
+.input-box span.item:has(label) {
+  width: calc(100% - 100px);
+  margin-left: 100px;
+}
+.input-box span.item:has(label) label {
+  display: block;
+  position: absolute;
+  left: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 90px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #6EACDA;
 }
 .input-box hr {
   border: none;
@@ -746,20 +764,82 @@ p.check-box input[type=checkbox] {
   border-radius: 4px;
 }
 
+div.table-type1 {
+  border: 1px solid #E3E8EC;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0 0 16px;
+}
+div.table-type1 table {
+  width: 100%;
+}
+div.table-type1 table th,
+div.table-type1 table td {
+  position: relative;
+  border-right: 1px solid #E3E8EC;
+  border-top: 1px solid #E3E8EC;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 16px;
+  color: #021526;
+}
+div.table-type1 table th:last-of-type,
+div.table-type1 table td:last-of-type {
+  border-right: none;
+}
+div.table-type1 table th p.check,
+div.table-type1 table td p.check {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0;
+}
+div.table-type1 table th p.check input,
+div.table-type1 table td p.check input {
+  display: none;
+}
+div.table-type1 table th p.check label,
+div.table-type1 table td p.check label {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../images/ic_check.svg) no-repeat center/100% auto;
+}
+div.table-type1 table th p.check input:checked + label,
+div.table-type1 table td p.check input:checked + label {
+  background-image: url(../images/ic_check_on.svg);
+}
+div.table-type1 table th:has(p.check),
+div.table-type1 table td:has(p.check) {
+  padding-left: 20px;
+}
+div.table-type1 table th {
+  color: #6EACDA;
+  font-weight: 500;
+  background: #F4F7FA;
+  border-top: none;
+}
+
 a {
   text-decoration: none;
   color: #202020;
+  cursor: pointer;
 }
 
 button {
   outline: none;
   border-radius: 0;
+  cursor: pointer;
 }
 
 /* default btn */
 .btn {
   display: block;
+  width: 100%;
   text-align: center;
+  border: none;
+  background: #fff;
 }
 .btn.main {
   background: #6EACDA;
@@ -788,6 +868,16 @@ button {
     margin: 40px 0;
   }
 }
+.btn.plus::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  margin: 0 10px 0 0;
+  width: 18px;
+  height: 18px;
+  background: url(../images/ic_plus.svg) no-repeat center/100% auto;
+}
 
 /* Modal */
 .modal {
@@ -800,6 +890,8 @@ button {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 .modal.on {
   display: block;
@@ -840,6 +932,64 @@ button {
 }
 .modal .modal-content div.text div {
   margin-bottom: 20px;
+}
+.modal .modal-content div.file {
+  padding: 20px 0 0;
+  max-height: 60vh;
+  overflow-y: scroll;
+}
+.modal .modal-content div.file button.add-photo {
+  border: 2px solid #6EACDA;
+  color: #6EACDA;
+  line-height: 52px;
+  border-radius: 12px;
+  font-size: 16px;
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+.modal .modal-content div.file button.add-photo::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  width: 20px;
+  height: 18px;
+  background: url(../images/ic_photo.svg) no-repeat center/100% auto;
+  margin: 0 12px 0 0;
+}
+.modal .modal-content div.file ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.modal .modal-content div.file ul li {
+  border-radius: 8px;
+  background: #E3E8EC;
+  margin: 0 0 10px;
+  padding: 15px;
+  font-size: 0;
+}
+.modal .modal-content div.file ul li span {
+  display: inline-block;
+  font-size: 16px;
+  width: calc(100% - 40px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.modal .modal-content div.file ul li button {
+  width: 40px;
+  border: none;
+  background: none;
+  font-size: 13px;
+  color: #FF473C;
+}
+.modal .modal-content div.file button.submit {
+  border: none;
+  line-height: 56px;
+  border-radius: 12px;
+  font-size: 16px;
+  margin: 34px 0 24px;
 }
 .modal .modal-content button.close {
   position: absolute;
@@ -2004,6 +2154,18 @@ body div#content.sub h4.stitle {
     margin: 0 0 60px;
   }
 }
+body div#content.sub h5.btitle {
+  margin: 30px 0 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #021526;
+}
+@media (min-width: 1280px) {
+  body div#content.sub h5.btitle {
+    font-size: 34px;
+    margin: 0 0 60px;
+  }
+}
 body div#content.sub section.sub-contents {
   text-align: center;
   padding: 80px 0;
@@ -2132,6 +2294,221 @@ body div#content.sub section.sub-contents div.container div.agree p.check button
   font-size: 13px;
   color: #A9A9A9;
   background: url(../images/ic_arrow2.svg) no-repeat right center/5.66px auto;
+}
+body div#content.sub section.sub-contents div.container div.my-data a.change-pw {
+  border: 2px solid #6EACDA;
+  color: #6EACDA;
+  line-height: 52px;
+  border-radius: 12px;
+  font-size: 16px;
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+body div#content.sub section.sub-contents div.container div.my-data a.change-pw::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  width: 13px;
+  height: 18px;
+  background: url(../images/ic_lock.svg) no-repeat center/100% auto;
+  margin: 0 12px 0 0;
+}
+body div#content.sub section.sub-contents div.container div.my-data button.add-photo {
+  border: 2px dashed #6EACDA;
+  color: #6EACDA;
+  line-height: 52px;
+  border-radius: 12px;
+  font-size: 16px;
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+body div#content.sub section.sub-contents div.container div.my-data button.add-photo::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  width: 20px;
+  height: 18px;
+  background: url(../images/ic_photo.svg) no-repeat center/100% auto;
+  margin: 0 12px 0 0;
+}
+body div#content.sub section.sub-contents div.container div.my-data ul.photo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+}
+body div#content.sub section.sub-contents div.container div.my-data ul.photo-list li {
+  position: relative;
+  margin: 0 0 16px;
+}
+@media (min-width: 1280px) {
+  body div#content.sub section.sub-contents div.container div.my-data ul.photo-list li {
+    display: inline-block;
+    width: calc((100% - 20px) / 2);
+  }
+  body div#content.sub section.sub-contents div.container div.my-data ul.photo-list li:nth-child(odd) {
+    margin-right: 20px;
+  }
+}
+body div#content.sub section.sub-contents div.container div.my-data ul.photo-list li p.image {
+  display: block;
+  margin: 0 0 10px;
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+body div#content.sub section.sub-contents div.container div.my-data ul.photo-list li p.image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body div#content.sub section.sub-contents div.container div.my-data ul.photo-list li strong {
+  font-size: 13px;
+  font-weight: 400;
+  color: #021526;
+}
+body div#content.sub section.sub-contents div.container div.my-data ul.photo-list li button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 13px;
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  color: #FF5353;
+}
+body div#content.sub section.sub-contents div.container ul.farm-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #E3E8EC;
+}
+body div#content.sub section.sub-contents div.container ul.farm-list li a {
+  display: block;
+  border-bottom: 1px solid #E3E8EC;
+  line-height: 60px;
+  padding: 0 28px 0 8px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: url(../images/ic_arrow1.svg) no-repeat right center/44px auto;
+}
+body div#content.sub section.sub-contents div.container ul.farm-list li a strong {
+  font-weight: 400;
+  color: #021526;
+}
+body div#content.sub section.sub-contents div.container ul.farm-list li a span {
+  font-weight: 700;
+  color: #6EACDA;
+  padding-left: 10px;
+}
+body div#content.sub section.sub-contents div.container div.farm-data div.btn-box {
+  font-size: 0;
+}
+body div#content.sub section.sub-contents div.container div.farm-data div.btn-box .add-equipment {
+  border: 2px solid #6EACDA;
+  color: #6EACDA;
+  line-height: 52px;
+  border-radius: 12px;
+  font-size: 16px;
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+body div#content.sub section.sub-contents div.container div.farm-data div.btn-box .add-equipment::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  background: url(../images/ic_plus2.svg) no-repeat center/100% auto;
+  margin: 0 12px 0 0;
+}
+body div#content.sub section.sub-contents div.container div.farm-data div.btn-box .add-barcode {
+  border: 2px solid #6EACDA;
+  color: #6EACDA;
+  line-height: 52px;
+  border-radius: 12px;
+  font-size: 16px;
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+body div#content.sub section.sub-contents div.container div.farm-data div.btn-box .add-barcode::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  width: 23px;
+  height: 18px;
+  background: url(../images/ic_barcode.svg) no-repeat center/100% auto;
+  margin: 0 12px 0 0;
+}
+body div#content.sub section.sub-contents div.container div.farm-data div.btn-box .del-equipment {
+  border: 2px solid #FF5353;
+  color: #FF5353;
+  line-height: 52px;
+  border-radius: 12px;
+  font-size: 16px;
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+body div#content.sub section.sub-contents div.container div.farm-data div.btn-box .del-equipment::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  background: url(../images/ic_minus.svg) no-repeat center/100% auto;
+  margin: 0 12px 0 0;
+}
+body div#content.sub section.sub-contents div.container div.farm-data div.btn-box .cancel {
+  border: 2px solid #FF5353;
+  color: #FF5353;
+  line-height: 52px;
+  border-radius: 12px;
+  font-size: 16px;
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+body div#content.sub section.sub-contents div.container div.farm-data div.btn-box .cancel::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  background: url(../images/ic_cancel.svg) no-repeat center/100% auto;
+  margin: 0 12px 0 0;
+}
+body div#content.sub section.sub-contents div.container div.farm-data div.btn-box .big {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% - 60px);
+}
+body div#content.sub section.sub-contents div.container div.farm-data div.btn-box .small {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  font-size: 0;
+  width: 52px;
+  text-align: center;
+}
+body div#content.sub section.sub-contents div.container div.farm-data div.btn-box .small::before {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+body div#content.sub section.sub-contents div.container div.farm-data div.btn-box .btn + .btn {
+  margin-left: 8px;
 }
 body footer#footer {
   border-top: 1px solid #E3E3E3;

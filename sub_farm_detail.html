@@ -102,68 +102,84 @@
 
                 <div class="container">
 
-                    <h4 class="stitle">사업자 정보 등록</h4>
+                    <h4 class="stitle">농장 정보 확인</h4>
     
-                    <div class="input-box">
+                    <div class="input-box my-data">
 
                         <span class="item">
-                            <input type="text" placeholder="이름(실명) 입력">
+                            <label for="id">농장 ID</label>
+                            <input id="id" type="text" readonly placeholder="농장 ID" value="ID-3123">
                         </span>
 
-                        <!-- 경고문 <i class="warning">* 이름을 입력해 주세요.</i> -->
-
                         <span class="item">
-                            <input type="tel" placeholder="전화번호 입력">
+                            <label for="farmer">농장주</label>
+                            <input id="farmer" type="text" readonly placeholder="농장주" value="양정은">
                         </span>
 
                         <hr />
 
+
                         <span class="item">
-                            <select>
-                                <option>사업자 유형</option>
-                                <option>사업자 유형</option>
-                            </select>
+                            <label for="type">농장 유형</label>
+                            <input id="fartypemer" type="text" readonly placeholder="농장 유형" value="비닐하우스">
                         </span>
 
                         <span class="item">
-                            <input type="text" placeholder="사업자등록번호 입력">
+                            <label for="crop">농장 작물</label>
+                            <input id="crop" type="text" readonly placeholder="농장 작물" value="감귤">
                         </span>
-
                         <span class="item">
-                            <input type="text" placeholder="사업장 주소 입력">
-                            <button class="send">검색</button>
+                            <label for="address1">농장 주소</label>
+                            <input id="address1" type="text" readonly placeholder="농장 주소" value="서귀포시 월평동">
                         </span>
-
                         <span class="item">
-                            <input type="text" placeholder="상세 주소 입력">
+                            <label for="address2" class="sr-only">농장 상세주소</label>
+                            <input id="address2" type="text" readonly placeholder="농장 상세주소" value="34번길">
                         </span>
 
                         <hr />
 
-                        <span class="item">
-                            <input type="text" placeholder="담당자 이름(실명) 입력">
-                        </span>
+                        <h5 class="btitle">설치 장비 현황</h5>
 
-                        <span class="item">
-                            <input type="tel" placeholder="담당자 전화번호 입력">
-                        </span>
+                        <div class="farm-data">
 
-                        <span class="item select bold">
-                            <select>
-                                <option>요금제 선택</option>
-                                <option>요금제 선택</option>
-                            </select>
-                        </span>
+                            <div class="table-type1">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>시리얼 번호</th>
+                                            <th>센서 종류</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>R/N 456466</td>
+                                            <td>온도감지센서</td>
+                                        </tr>
+                                        <tr>
+                                            <td>R/N 456466</td>
+                                            <td>온도감지센서</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+    
+                            </div>
 
-                        <ul class="info">
-                            <li>요금제를 선택하지 않아도 회원가입 가능 합니다.</li>
-                            <li>별도의 페이지에서 요금제 선택 및 가입이 가능합니다.</li>
-                        </ul>
-                        
+
+                            <div class="btn-box">
+                                <a class="btn add-equipment">장비추가</a>
+                            </div>
+                        </div>
+
+
+
+
+
+
 
                         <!-- 작성 완료 전 = 클래스명을 sub 작성완료 후 = main -->
 
-                        <a class="btn main fixed" href="">회원가입</a>
+                        <a class="btn main fixed" href="">수정하기</a>
 
                     </div>
 
@@ -180,7 +196,6 @@
 
         </div>
         <!-- E:subContent -->
-
 
 
 

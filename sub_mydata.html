@@ -102,21 +102,29 @@
 
                 <div class="container">
 
-                    <h4 class="stitle">사업자 정보 등록</h4>
+                    <h4 class="stitle">사용자 정보 관리</h4>
     
-                    <div class="input-box">
+                    <div class="input-box my-data">
+
+                        <span class="item">
+                            <label for="id">로그인 ID</label>
+                            <input id="id" type="text" readonly placeholder="아이디" value="yje">
+                        </span>
+
+                        <a class="btn change-pw">비밀번호 변경하기</a>
+
+                        <hr />
 
                         <span class="item">
                             <input type="text" placeholder="이름(실명) 입력">
                         </span>
-
-                        <!-- 경고문 <i class="warning">* 이름을 입력해 주세요.</i> -->
 
                         <span class="item">
                             <input type="tel" placeholder="전화번호 입력">
                         </span>
 
                         <hr />
+
 
                         <span class="item">
                             <select>
@@ -126,7 +134,7 @@
                         </span>
 
                         <span class="item">
-                            <input type="text" placeholder="사업자등록번호 입력">
+                            <input type="text" placeholder="사업자 등록번호 입력">
                         </span>
 
                         <span class="item">
@@ -138,6 +146,25 @@
                             <input type="text" placeholder="상세 주소 입력">
                         </span>
 
+                        <button class="btn add-photo">사업장 이미지 등록</button>
+
+                        <ul class="photo-list">
+                            <li>
+                                <p class="image">
+                                    <img src="source/images/tmp01.png" alt="">
+                                </p>
+                                <strong>2025-04-45-01.jpg</strong>
+                                <button class="delete">삭제하기</button>
+                            </li>
+                            <li>
+                                <p class="image">
+                                    <img src="source/images/tmp02.png" alt="">
+                                </p>
+                                <strong>2025-04-45-01.jpg</strong>
+                                <button class="delete">삭제하기</button>
+                            </li>
+                        </ul>
+
                         <hr />
 
                         <span class="item">
@@ -148,7 +175,7 @@
                             <input type="tel" placeholder="담당자 전화번호 입력">
                         </span>
 
-                        <span class="item select bold">
+                        <span class="item bold">
                             <select>
                                 <option>요금제 선택</option>
                                 <option>요금제 선택</option>
@@ -163,7 +190,7 @@
 
                         <!-- 작성 완료 전 = 클래스명을 sub 작성완료 후 = main -->
 
-                        <a class="btn main fixed" href="">회원가입</a>
+                        <a class="btn sub fixed" href="">변경하기</a>
 
                     </div>
 
@@ -182,6 +209,45 @@
         <!-- E:subContent -->
 
 
+
+
+
+        <div class="modal"><!-- 오픈 시 클래스명 추가 : on -->
+            <div class="modal-content">
+                <h2>파일첨부</h2>
+
+                <div class="file">
+
+
+                    <button class="btn add-photo">파일선택</button>
+
+                    <ul>
+                        <li>
+                            <span>cluster-maker1.png</span>
+                            <button>삭제</button>
+                        </li>
+                        <li>
+                            <span>cluster-maker1.png</span>
+                            <button>삭제</button>
+                        </li>
+                        <li>
+                            <span>cluster-maker1.png</span>
+                            <button>삭제</button>
+                        </li>
+                        <li>
+                            <span>cluster-maker1asd fasdf asdf asdf asdfa sdf asdf .png</span>
+                            <button>삭제</button>
+                        </li>
+                    </ul>
+
+                    <button class="btn main submit">업로드</button>
+
+
+                </div>
+
+                <button class="close">창닫기</button>
+            </div>
+        </div>
 
 
 
