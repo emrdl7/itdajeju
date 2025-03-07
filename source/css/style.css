@@ -558,64 +558,166 @@ textarea {
 
 .input-box span.item {
   display: inline-block;
+  position: relative;
   width: 100%;
-  margin: 0 0 50px;
+  margin: 0 0 16px;
+  border: 1px solid #E3E8EC;
+  border-radius: 8px;
+  font-size: 0;
 }
 .input-box span.item input[type=text],
 .input-box span.item input[type=password],
 .input-box span.item input[type=date],
+.input-box span.item input[type=tel],
 .input-box span.item select {
   border-radius: 8px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   background: #fff;
-  border: 1px solid #E3E8EC;
   padding: 0 15px;
   outline: none;
   font-size: 16px;
   color: #021526;
   width: 100%;
   height: 52px;
+  border: none;
+  background: #fff;
 }
-.input-box span.item input[type=text]:focus,
-.input-box span.item input[type=password]:focus,
-.input-box span.item input[type=date]:focus,
-.input-box span.item select:focus {
-  border-color: #03346E;
-}
-.input-box span.item input[type=text]:-moz-read-only, .input-box span.item input[type=password]:-moz-read-only, .input-box span.item input[type=date]:-moz-read-only, .input-box span.item select:-moz-read-only {
-  border-color: #E3E8EC;
-  background: #F4F7FA;
-  color: #939FAF;
-}
-.input-box span.item input[type=text]:read-only,
-.input-box span.item input[type=password]:read-only,
-.input-box span.item input[type=date]:read-only,
-.input-box span.item select:read-only {
-  border-color: #E3E8EC;
-  background: #F4F7FA;
-  color: #939FAF;
-}
-.input-box span.item input[type=text]::-moz-placeholder, .input-box span.item input[type=password]::-moz-placeholder, .input-box span.item input[type=date]::-moz-placeholder, .input-box span.item select::-moz-placeholder {
+.input-box span.item input[type=text]::-moz-placeholder, .input-box span.item input[type=password]::-moz-placeholder, .input-box span.item input[type=date]::-moz-placeholder, .input-box span.item input[type=tel]::-moz-placeholder, .input-box span.item select::-moz-placeholder {
   color: #939FAF;
 }
 .input-box span.item input[type=text]::placeholder,
 .input-box span.item input[type=password]::placeholder,
 .input-box span.item input[type=date]::placeholder,
+.input-box span.item input[type=tel]::placeholder,
 .input-box span.item select::placeholder {
   color: #939FAF;
 }
 .input-box span.item input[type=text].error,
 .input-box span.item input[type=password].error,
 .input-box span.item input[type=date].error,
+.input-box span.item input[type=tel].error,
 .input-box span.item select.error {
   border-color: #FF5353;
 }
-.input-box span.item i.warning {
-  color: #FF473C;
-  margin: 12px 0 0;
+.input-box span.item:focus-within {
+  border-color: #03346E;
+}
+.input-box span.item.select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.input-box span.item.select select:-moz-read-only {
+  background: #fff;
+}
+.input-box span.item.select select:read-only {
+  background: #fff;
+}
+.input-box span.item.select.bold {
+  border: 2px solid #6EACDA;
+  font-weight: 700;
+}
+.input-box span.item.select.bold select:-moz-read-only {
+  color: #6EACDA;
+}
+.input-box span.item.select.bold select:read-only {
+  color: #6EACDA;
+}
+.input-box span.item.select::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 6px;
+  background: url(../images/ic_arrow_drop_point.svg) no-repeat center/100% auto;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.input-box span.item.read-only {
+  border-color: #E3E8EC;
+  background: #F4F7FA;
+}
+.input-box span.item.read-only input {
+  background: transparent;
+  color: #939FAF;
+}
+.input-box span.item.wbtn input {
+  width: calc(100% - 80px);
+}
+.input-box span.item.wbtn button {
   font-size: 13px;
+  border: 2px solid #6EACDA;
+  border-radius: 8px;
+  height: 36px;
+  font-weight: 700;
+  color: #6EACDA;
+  background: #fff;
+  width: 72px;
+}
+.input-box span.item.password input {
+  width: calc(100% - 40px);
+}
+.input-box span.item.password button {
+  vertical-align: top;
+  font-size: 0;
+  border: none;
+  height: 52px;
+  background: url(../images/ic_eye_hide.svg) no-repeat center/20px auto;
+  width: 32px;
+}
+.input-box span.item.password.show button {
+  background-image: url(../images/ic_eye_show.svg);
+}
+.input-box hr {
+  border: none;
+  border-top: 1px dashed #E3E8EC;
+  height: 0;
+  margin: 0 0 16px;
+}
+.input-box i.warning {
+  display: block;
+  position: relative;
+  top: -6px;
+  font-style: normal;
+  color: #FF473C;
+  margin: 0 0 16px;
+  font-size: 13px;
+}
+.input-box i.counter {
+  display: block;
+  position: relative;
+  text-align: right;
+  top: -6px;
+  font-style: normal;
+  color: #FF473C;
+  margin: 0 0 16px;
+  font-size: 13px;
+}
+.input-box ul.info {
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+.input-box ul.info li {
+  position: relative;
+  color: #B3BDCD;
+  margin: 0 0 10px;
+  padding: 0 0 0 20px;
+  font-size: 13px;
+}
+.input-box ul.info li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  width: 5px;
+  height: 5px;
+  background: #B3BDCD;
+  border-radius: 50%;
 }
 
 p.check-box {
@@ -656,6 +758,28 @@ button {
   color: #fff;
   font-weight: 700;
 }
+.btn.sub {
+  background: #B3BDCD;
+  color: #fff;
+  font-weight: 700;
+}
+.btn.fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1400;
+  line-height: 56px;
+  font-size: 16px;
+  font-weight: 700;
+}
+@media (min-width: 1280px) {
+  .btn.fixed {
+    position: static;
+    border-radius: 8px;
+    margin: 40px 0;
+  }
+}
 
 /* Modal */
 .modal {
@@ -682,75 +806,43 @@ button {
   max-width: calc(100% - 40px);
   border-radius: 25px;
   overflow: hidden;
+  padding: 20px;
 }
 .modal .modal-content h2 {
-  background: #1276C0;
   line-height: 60px;
-  color: #fff;
+  color: #021526;
   margin: 0;
-  text-align: center;
+  text-align: left;
+  font-size: 19px;
+  border-bottom: 2px solid #021526;
 }
-.modal .modal-content h2 button {
-  position: absolute;
-  right: 20px;
-  border: none;
-  background: transparent;
-  font-size: 16px;
-  font-weight: 500;
+.modal .modal-content div.text {
+  padding: 20px 0;
+  margin: 10px 0;
+  height: 60vh;
+  overflow-y: scroll;
+  font-size: 12px;
+  color: #3E3E3E;
+  word-break: keep-all;
 }
-.modal .modal-content h2 button i {
-  position: relative;
-  top: 3px;
-  font-size: 20px;
-}
-.modal .modal-content ul.list {
-  margin: 0;
-  padding: 0;
-  max-height: 600px;
-  overflow-y: auto;
-}
-.modal .modal-content ul.list li {
-  position: relative;
-  border-bottom: 1px solid #ccc;
-  background: #fff;
-  padding: 30px 124px 30px 20px;
-}
-@media (min-width: 1280px) {
-  .modal .modal-content ul.list li {
-    padding-right: 30px;
-  }
-}
-.modal .modal-content ul.list li:last-child() {
-  border: none;
-}
-.modal .modal-content ul.list li strong {
+.modal .modal-content div.text strong {
   display: block;
   font-weight: 700;
-  font-size: 20px;
-  color: #1276C0;
-  margin: 0 0 6px;
+  margin-bottom: 5px;
 }
-.modal .modal-content ul.list li span {
-  display: block;
-  font-size: 16px;
-  font-weight: 500;
+.modal .modal-content div.text div {
+  margin-bottom: 20px;
 }
-.modal .modal-content ul.list li button {
+.modal .modal-content button.close {
   position: absolute;
-  right: 20px;
-  top: 30px;
-  bottom: 30px;
-  width: 84px;
-  font-size: 16px;
-  color: #fff;
-  background: #2E2E2F;
+  right: 10px;
+  top: 24px;
   border: none;
-  border-radius: 10px;
-}
-@media (min-width: 1280px) {
-  .modal .modal-content ul.list li button {
-    right: 30px;
-  }
+  font-size: 0;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  background: url(../images/ic_close_white.svg) no-repeat center/100% auto;
 }
 
 /* basic */
@@ -1907,6 +1999,7 @@ body div#content.sub h4.stitle {
 body div#content.sub section.sub-contents {
   text-align: center;
   padding: 80px 0;
+  min-height: 800px;
 }
 @media (min-width: 1280px) {
   body div#content.sub section.sub-contents {
@@ -1931,6 +2024,21 @@ body div#content.sub section.sub-contents div.container div.login-box span.item 
 body div#content.sub section.sub-contents div.container div.login-box span.item input[type=text]::placeholder,
 body div#content.sub section.sub-contents div.container div.login-box span.item input[type=password]::placeholder {
   color: #A9A9A9;
+}
+body div#content.sub section.sub-contents div.container div.login-box div.result {
+  border: 1px solid #E3E3E3;
+  border: radius 8px;
+  padding: 30px 20px;
+  text-align: center;
+}
+body div#content.sub section.sub-contents div.container div.login-box div.result p {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: #021526;
+}
+body div#content.sub section.sub-contents div.container div.login-box div.result strong {
+  font-size: 16px;
+  color: #6EACDA;
 }
 body div#content.sub section.sub-contents div.container div.login-box a.btn {
   line-height: 56px;
@@ -1964,6 +2072,58 @@ body div#content.sub section.sub-contents div.container div.login-box div.tools 
 }
 body div#content.sub section.sub-contents div.container div.login-box div.tools a:last-of-type::after {
   display: none;
+}
+body div#content.sub section.sub-contents div.container div.agree p.check {
+  position: relative;
+  margin: 0 0 20px;
+  font-size: 16px;
+  color: #3E3E3E;
+}
+body div#content.sub section.sub-contents div.container div.agree p.check.all {
+  padding: 0 0 20px;
+  border-bottom: 1px dashed #E3E8EC;
+}
+body div#content.sub section.sub-contents div.container div.agree p.check input {
+  display: none;
+}
+body div#content.sub section.sub-contents div.container div.agree p.check label {
+  display: block;
+  position: relative;
+  padding: 0 0 0 40px;
+  cursor: pointer;
+}
+body div#content.sub section.sub-contents div.container div.agree p.check label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: url(../images/ic_check.svg) no-repeat center/100% auto;
+}
+body div#content.sub section.sub-contents div.container div.agree p.check label i {
+  font-size: 13px;
+  color: #A9A9A9;
+  font-style: normal;
+  padding-left: 6px;
+}
+body div#content.sub section.sub-contents div.container div.agree p.check input:checked + label::before {
+  background-image: url(../images/ic_check_on.svg);
+}
+body div#content.sub section.sub-contents div.container div.agree p.check button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0 14px 0 0;
+  font-size: 13px;
+  color: #A9A9A9;
+  background: url(../images/ic_arrow2.svg) no-repeat right center/5.66px auto;
 }
 body footer#footer {
   border-top: 1px solid #E3E3E3;

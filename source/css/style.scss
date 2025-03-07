@@ -1351,6 +1351,7 @@ body {
       section.sub-contents {
         text-align:center;
         padding:80px 0;
+        min-height:800px;
 
         @media (min-width: $screen-size-pc) {
           padding:120px 0;
@@ -1375,6 +1376,25 @@ body {
                 &::placeholder {
                   color:#A9A9A9;
                 }
+              }
+            }
+
+            div.result {
+
+              border:1px solid #E3E3E3;
+              border: radius 8px;
+              padding:30px 20px;
+              text-align:center;
+
+              p {
+                margin:0 0 10px;
+                font-size:16px;
+                color:#021526
+              }
+
+              strong {
+                font-size:16px;
+                color:#6EACDA
               }
             }
 
@@ -1417,6 +1437,75 @@ body {
 
               }
             }
+          }
+
+          div.agree {
+
+            p.check {
+              position:relative;
+              margin:0 0 20px;
+              font-size:16px;
+              color:#3E3E3E;
+
+              &.all {
+                padding:0 0 20px;
+                border-bottom:1px dashed #E3E8EC;
+              }
+
+              input {
+                display:none;
+              }
+
+              label {
+                display:block;
+                position:relative;
+                padding:0 0 0 40px;
+                cursor:pointer;
+
+                &::before {
+                  content:"";
+                  display:block;
+                  position:absolute;
+                  left:8px;
+                  top:50%;
+                  transform:translateY(-50%);
+                  width:16px;
+                  height:16px;
+                  background:url(../images/ic_check.svg) no-repeat center / 100% auto;
+                }
+
+                i {
+                  font-size:13px;
+                  color:#A9A9A9;
+                  font-style:normal;
+                  padding-left:6px;
+                }
+              }
+
+              input:checked + label {
+
+                &::before {
+                  background-image:url(../images/ic_check_on.svg);
+                }
+
+              }
+
+              button {
+                position:absolute;
+                right:8px;
+                top:50%;
+                transform:translateY(-50%);
+                border:none;
+                background:none;
+                margin:0;
+                padding:0 14px 0 0;
+                font-size:13px;
+                color:#A9A9A9;
+                background:url(../images/ic_arrow2.svg) no-repeat right center / 5.66px auto;
+              }
+            }
+
+
           }
 
         }
