@@ -2154,6 +2154,14 @@ body div#content.sub h4.stitle {
     margin: 0 0 60px;
   }
 }
+body div#content.sub h4.stitle small.text {
+  display: block;
+  word-break: keep-all;
+  margin: 24px 0 0;
+  padding: 0 40px;
+  font-size: 16px;
+  font-weight: 500;
+}
 body div#content.sub h5.btitle {
   margin: 30px 0 20px;
   font-size: 16px;
@@ -2162,8 +2170,8 @@ body div#content.sub h5.btitle {
 }
 @media (min-width: 1280px) {
   body div#content.sub h5.btitle {
-    font-size: 34px;
-    margin: 0 0 60px;
+    font-size: 24px;
+    margin: 40px 0 20px;
   }
 }
 body div#content.sub section.sub-contents {
@@ -2404,6 +2412,35 @@ body div#content.sub section.sub-contents div.container ul.farm-list li a strong
   color: #021526;
 }
 body div#content.sub section.sub-contents div.container ul.farm-list li a span {
+  font-weight: 700;
+  color: #6EACDA;
+  padding-left: 10px;
+}
+body div#content.sub section.sub-contents div.container ul.farm-list2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #E3E8EC;
+}
+body div#content.sub section.sub-contents div.container ul.farm-list2 li a {
+  display: block;
+  border-bottom: 1px solid #E3E8EC;
+  padding: 20px 28px 16px 8px;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: url(../images/ic_arrow1.svg) no-repeat right center/44px auto;
+}
+body div#content.sub section.sub-contents div.container ul.farm-list2 li a p {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+body div#content.sub section.sub-contents div.container ul.farm-list2 li a strong {
+  font-weight: 400;
+  color: #021526;
+}
+body div#content.sub section.sub-contents div.container ul.farm-list2 li a span {
   font-weight: 700;
   color: #6EACDA;
   padding-left: 10px;
